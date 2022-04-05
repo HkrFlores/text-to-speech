@@ -1,0 +1,3 @@
+openCV : pip install opencv-python
+tesseract : pip install pytesseract
+gTTS : pip install gTTS
