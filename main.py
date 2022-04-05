@@ -9,8 +9,8 @@ img = cv2.imread('images/ohboy.png')
 text = pytesseract.image_to_string(img)
 print(text)
 language = 'en'
-myobj = gTTS(text=text, lang=language,tld="com.au", slow=False)
+audio = gTTS(text=text, lang=language,tld="com.au", slow=False)
 
-myobj.save("audio/ohboy.mp3")
+audio.save("audio/ohboy2.mp3")
 
 
