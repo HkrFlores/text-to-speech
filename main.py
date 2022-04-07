@@ -10,11 +10,15 @@ language = 'en'
 
 for file in filesname:
     filename = file.strip('.png')
+    textpath = 'text/' + filename + '.txt'
     imagepath = 'images/' + file
     img = cv2.imread(imagepath)
     text = pytesseract.image_to_string(img)
     print(text)
-    audio = gTTS(text=text, lang=language, slow=False)
+    convertedtext = open(textpath, "a")
+    convertedtext.write(text)
+    convertedtext.close()
+    audio = gTTS(text=convertedtext, lang=language, slow=False)
     audiopath = 'audio/' + filename + '.mp3'
     print(audiopath)
     audio.save(audiopath)
