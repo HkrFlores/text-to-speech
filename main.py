@@ -15,10 +15,7 @@ for file in filesname:
     img = cv2.imread(imagepath)
     text = pytesseract.image_to_string(img)
     print(text)
-    convertedtext = open(textpath, "a")
-    convertedtext.write(text)
-    convertedtext.close()
-    audio = gTTS(text=convertedtext, lang=language, slow=False)
+    audio = gTTS(text=text, lang=language, slow=False)
     audiopath = 'audio/' + filename + '.mp3'
     print(audiopath)
     audio.save(audiopath)
